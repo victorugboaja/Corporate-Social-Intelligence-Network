@@ -1,10 +1,10 @@
-# Corporate Social Intelligence
+# Corporate Social Intelligence Network
 
 AI-assisted funding intelligence for evaluating nonprofit evidence and managing cross-border grant decisions.
 
 ## About
 
-BCF helps corporate community-investment teams evaluate nonprofit funding opportunities using evidence-based reports, human review, and traceable grant decisions.
+CSIN helps corporate community-investment teams evaluate nonprofit funding opportunities using evidence-based reports, human review, and traceable grant decisions.
 
 ## Hackathon Integrations
 
@@ -15,4 +15,4 @@ BCF helps corporate community-investment teams evaluate nonprofit funding opport
 
 ## Status
 
-Built for Hack the Hill 2026. This prototype uses fictional organizations, synthetic evidence, and test-network transactions. No real grants or funds are transferred.
+Built for Hack the Hill 2026. This prototype uses fictional organizations, synthetic evidence, and test-network transactions. No real grants or funds are disbursed or committed.
