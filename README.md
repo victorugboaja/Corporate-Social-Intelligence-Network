@@ -1,4 +1,4 @@
-# Borderless Corporate Funding (BCF)
+# Corporate Social Intelligence
 
 AI-assisted funding intelligence for evaluating nonprofit evidence and managing cross-border grant decisions.
 
