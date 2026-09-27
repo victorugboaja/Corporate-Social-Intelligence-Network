@@ -24,7 +24,7 @@ const server=http.createServer(async(req,res)=>{
   let pathname;
   try{pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);}catch{res.writeHead(400);return res.end('Bad request');}
   if(pathname==='/health'){res.writeHead(200,{'Content-Type':'application/json'});return res.end(JSON.stringify({status:'ok'}));}
-  const routes={'/':'/landing.html','/scout':'/scout.html','/evidence':'/index.html','/track':'/track.html'};
+  const routes={'/':'/landing.html','/scout':'/scout.html','/evidence':'/index.html','/track':'/track.html','/analyst':'/analyst.html'};
   const file=path.resolve(root,'.'+(routes[pathname]||pathname));
   if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end('Forbidden');}
   try{

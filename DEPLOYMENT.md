@@ -20,9 +20,15 @@ docker compose up -d --build
 docker compose ps
 ```
 
-Check `https://YOUR-DOMAIN/health`; it should return `{"status":"ok"}`. Then walk through `/`, `/scout`, `/evidence?org=ottawa`, `/track` and `/fund.html?org=ottawa`.
+Check `https://YOUR-DOMAIN/health`; it should return `{"status":"ok"}`. Then walk through `/`, `/scout`, `/evidence?org=ottawa`, `/analyst?org=ottawa`, `/track` and `/fund.html?org=ottawa`.
 
-In the Auth0 application settings, add `https://YOUR-DOMAIN/auth-callback.html` to Allowed Callback URLs and `https://YOUR-DOMAIN` to both Allowed Logout URLs and Allowed Web Origins. Keep the local `127.0.0.1` entries during judging if the local preview will still be used. This browser integration uses the public Domain and Client ID only; never add a Client Secret to frontend code.
+In the Auth0 application settings (Application → Settings), allow the **exact** deployed origin or Auth0 returns **Callback URL mismatch** and navbar routes look broken:
+
+- Allowed Callback URLs: `https://YOUR-DOMAIN/auth-callback.html` (for the current Vercel preview also add `https://corporate-social-intelligence-netwo.vercel.app/auth-callback.html`)
+- Allowed Logout URLs: `https://YOUR-DOMAIN` (and the Vercel origin if used)
+- Allowed Web Origins: `https://YOUR-DOMAIN` (and the Vercel origin if used)
+
+Keep local `http://127.0.0.1:4173` and `http://localhost:4173` entries (with matching `/auth-callback.html` callbacks) during judging. Application pages no longer force Auth0 before rendering; Sign in remains available from `/login.html` and the top bar. This browser integration uses the public Domain and Client ID only; never add a Client Secret to frontend code.
 
 ## Final-origin checks
 

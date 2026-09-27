@@ -16,9 +16,9 @@ CSIN is a human-led demonstration. A funder scouts a curated set of sample Canad
 
 Landing → Scout → organization profile → program analysis → human review → voice analyst → test-funding flow → prospect list.
 
-Local routes: `/`, `/scout`, `/evidence`, `/analyst.html`, `/fund.html`, and `/track`.
+Local routes: `/`, `/scout`, `/evidence`, `/analyst`, `/fund.html`, and `/track`.
 
-Auth0 Universal Login provides account creation, login, logout and protected application routes. After authentication, CSIN asks for the user’s name and company as the workspace profile.
+Auth0 Universal Login provides optional account creation, login and logout. Application pages render without forcing Auth0 first, so a missing production callback URL cannot blank the demo. After Auth0 sign-in (or the local Scout access dialog), CSIN still records the user’s name and company as the workspace profile.
 
 ## Demonstration data
 

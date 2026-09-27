@@ -6,7 +6,7 @@ import {ScoutShowcase} from "./components/scout-showcase";
 const nav = [
   {label: "Scout", to: "/scout"},
   {label: "Prospect List", to: "/track"},
-  {label: "CSIN Analyst", to: "/analyst.html?org=ottawa"},
+  {label: "CSIN Analyst", to: "/analyst?org=ottawa"},
 ];
 
 function NavLinks({onNavigate}: {onNavigate?: () => void}) {

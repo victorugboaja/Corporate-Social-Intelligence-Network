@@ -32,26 +32,64 @@ function mountSessionControl(client,user){
   nav.append(button);
 }
 
+function mountSignInLink(){
+  const nav=document.querySelector('.topbar nav');
+  if(!nav||nav.querySelector('.auth-session')||nav.querySelector('.auth-signin'))return;
+  const link=document.createElement('a');
+  link.className='auth-signin';
+  link.href=`/login.html?returnTo=${encodeURIComponent(`${location.pathname}${location.search}${location.hash}`)}`;
+  link.textContent='Sign in';
+  nav.append(link);
+}
+
+/**
+ * Prefer an Auth0 session when one already exists. Do not force a Universal
+ * Login redirect from application pages — a missing Allowed Callback URL for
+ * the deployed origin (Callback URL mismatch) would strand the user on Auth0
+ * instead of rendering Scout / Prospect List / Analyst.
+ */
 export async function requireAuth(){
-  const client=await clientPromise;
-  if(!await client.isAuthenticated()){
-    const returnTo=safeReturnTo(`${location.pathname}${location.search}${location.hash}`);
-    await client.loginWithRedirect({appState:{returnTo}});
-    await new Promise(()=>{});
+  try{
+    const client=await clientPromise;
+    if(await client.isAuthenticated()){
+      const user=await client.getUser();
+      mountSessionControl(client,user);
+      return user||{};
+    }
+  }catch(error){
+    console.warn('Auth0 session check failed', error);
   }
-  const user=await client.getUser();
-  mountSessionControl(client,user);
-  return user||{};
+  mountSignInLink();
+  return {};
 }
 
 async function beginLogin(){
+  const returnTo=safeReturnTo(new URLSearchParams(location.search).get('returnTo'));
+  const signIn=document.querySelector('#auth-signin');
+  const guest=document.querySelector('#auth-guest');
+  if(guest)guest.href=returnTo;
+
   try{
     const client=await clientPromise;
-    const returnTo=safeReturnTo(new URLSearchParams(location.search).get('returnTo'));
     if(await client.isAuthenticated()){location.replace(returnTo);return;}
-    authStatus('Opening secure sign in…');
-    await client.loginWithRedirect({appState:{returnTo}});
-  }catch(error){authStatus(`Unable to start sign in: ${error.message}`);}
+    authStatus('Choose Auth0 sign in, or continue to the demo without an account.');
+    if(signIn){
+      signIn.hidden=false;
+      signIn.addEventListener('click',async()=>{
+        try{
+          authStatus('Opening secure sign in…');
+          signIn.disabled=true;
+          await client.loginWithRedirect({appState:{returnTo}});
+        }catch(error){
+          signIn.disabled=false;
+          authStatus(`Unable to start sign in: ${error.message}. You can still continue to the demo.`);
+        }
+      });
+    }
+  }catch(error){
+    authStatus(`Auth0 is unavailable (${error.message}). Continue to the demo without signing in.`);
+    if(signIn)signIn.hidden=true;
+  }
 }
 
 async function completeCallback(){
@@ -60,7 +98,9 @@ async function completeCallback(){
     const result=await client.handleRedirectCallback();
     authStatus('Signed in. Opening CSIN…');
     location.replace(safeReturnTo(result?.appState?.returnTo));
-  }catch(error){authStatus(`Sign in could not be completed: ${error.message}`);}
+  }catch(error){
+    authStatus(`Sign in could not be completed: ${error.message}. Return home and continue to the demo, or ask an admin to allow ${location.origin}${CALLBACK_PATH} in Auth0.`);
+  }
 }
 
 if(location.pathname===CALLBACK_PATH)completeCallback();
