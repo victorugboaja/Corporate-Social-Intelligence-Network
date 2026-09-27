@@ -2,6 +2,12 @@
 
 Canada-only, fictional funding intelligence: landing → Scout → evidence → human review → devnet test funding → Track.
 
+## Build disclosure
+
+Built during Hack the Hill III with AI-assisted development using OpenAI Codex and Cursor. The participant defined the product, civic-tech problem, workflows, evidence rules, interface requirements and final implementation decisions. AI tools assisted with code generation, debugging and documentation. Third-party services used by the prototype are Auth0, ElevenLabs and Solana devnet; package dependencies are recorded in `package.json` and `package-lock.json`.
+
+The application uses a Node.js server for static routes, health checks and a restricted Solana devnet RPC proxy. The landing page is bundled from React/TypeScript; the application workflow uses browser JavaScript. Git commits and isolated worktrees preserve the project history and keep parallel Cursor work separate until review.
+
 ## Run
 
 Requires Node.js 22+. Run `npm ci`, `npm run build`, then `npm start`. Open http://127.0.0.1:4173/. Run `npm test` for review, matching and transfer-receipt checks.
