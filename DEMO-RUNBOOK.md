@@ -28,10 +28,10 @@ The final action is an explicitly authorized Solana devnet transfer. The wallet 
 2. Scout: Ontario, Employment, then **Run Scout**.
 3. Ottawa: open the employment source and point out the evidence gap.
 4. Open the voice analyst and ask: “What supports Ottawa Access Collective’s employment outcome, and what remains unverified?”
-5. Review the three findings. Approve participation and spending; correct or approve the outcome with a note that it is self-reported.
+5. Review the six findings. Approve each only after reading its evidence; correcting or flagging requires a note.
 6. Show Funding unlocked, then show the wallet authorization statement.
 7. After devnet SOL is available, sign the 0.001 devnet SOL transfer and show the verified receipt in Track.
-8. Show **What changed**, load the follow-up and point out that the changed outcome returns to pending review.
+8. Select **Add evidence update**, attach a text report, create the next report version and point out that only the changed finding returns to pending review.
 
 ## Honest fallback
 

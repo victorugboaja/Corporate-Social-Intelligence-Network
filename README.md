@@ -22,11 +22,11 @@ The imported Lovable landing source lives in landing/. Its build outputs are und
 2. Select Ontario and Employment, then Run Scout. Open Ottawa.
 3. Read an evidence source; flag a finding with an explanatory note.
 4. Open the voice analyst beside the evidence. Loading controls does not start a call; the user starts and ends the ElevenLabs session.
-5. Under What changed, load Ottawa's follow-up. Changed findings need another review; earlier versions remain available for export.
+5. Select Add evidence update, attach a text report and confirm the changed finding. CSIN creates a new report version and reopens that finding for review.
 6. Review every finding before using Funding. Payment authorization is a separate action. A browser wallet and devnet balance are required for a real 0.001 devnet SOL transfer; no CAD grant is paid.
 7. Track shows local review activity and any verified test-payment receipt.
 
-Review and receipt state are stored in this browser only, with no production authentication. Reports are synthetic fixtures, not live AI extraction. The voice agent needs the updated CSIN-DEMO-EVIDENCE.md knowledge packet; no local notes are automatically sent.
+Auth0 provides account authentication. Evidence versions, review and receipt state are stored in this browser for the prototype; there is no shared production database or automated report extraction. The voice agent needs the updated CSIN-DEMO-EVIDENCE.md knowledge packet; no local notes are automatically sent.
 
 ## Deployment
 

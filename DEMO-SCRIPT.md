@@ -18,7 +18,7 @@ Prospect List is where an organization added from its profile remains for anothe
 
 1. Open `/`. Select **Get Started**. Sign in or create an account through Auth0. When **Scout access** appears, enter a name and company, then select **Continue**. Route: `/scout`.
 2. Under **Funding Criteria**, set **Province** to Ontario and **Sector** to Employment. Select **Scout**.
-3. Open **Ottawa Access Collective**. Route: `/evidence?org=ottawa`. The page is **Organization Profile**, marked **SAMPLE ORGANIZATION**.
+3. Open **Ottawa Access Collective**. Route: `/evidence?org=ottawa`. The page is **Organization Profile**.
 4. Select **Add to Prospect List**, then select **Proceed to Program Analysis**. Route: `/evidence?org=ottawa&view=analysis`.
 5. Select each finding tile, read its headline, source and status update, and select **Approve evidence** only after reviewing it. Flagging or correcting requires a note. Treat every rating and dollar figure as sample demonstration data.
 6. Select **Discuss with CSIN Analyst** (**Click to call**). Route: `/analyst.html?org=ottawa`. Select **Talk to CSIN Analyst** to load the controls, then **Start Call**. Select **End call and close** when finished.

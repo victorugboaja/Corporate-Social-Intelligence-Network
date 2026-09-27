@@ -3,8 +3,8 @@
 ## Implemented locally
 
 - Actual imported Lovable landing components at / with CSIN branding, miniature animated Canada network and links to /scout. CSS animation and mobile menu reused; unrelated financial/auth integrations excluded.
-- Full Canada Scout map, scan animation, six mandate criteria, four sample profiles and useful empty states.
-- Source-backed fixture reports, local human notes, review states, original report exports and Ottawa follow-up comparison. Changed evidence invalidates its review.
+- Full Canada Scout map, scan animation, six funding criteria, 20 sample profiles and useful empty states.
+- Source-backed reports, corporate analyst evidence intake, report versioning, local human notes and review states. New evidence preserves history and reopens only the changed finding.
 - ElevenLabs widget loader beside evidence and standalone analyst page. Public agent ID configured. The user explicitly starts any metered conversation.
 - Test-payment page: all findings must be reviewed; explicit authorization; wallet signs a fixed devnet transaction; verify transfer source, recipient, amount and success before confirming. No real money.
 - Local Track portfolio with review/report links and any test transaction receipt.
@@ -13,7 +13,7 @@
 
 ## Verification
 
-Six automated tests pass (matching boundaries, review/history/notes, changed evidence, authorization gate, receipt details). Production landing and payment bundles build. Browser checks passed for landing rendering and CTA → Scout, Ontario matching → Ottawa evidence, voice controls loading without starting a call, a 3/3 human review with an explicit correction note, and the reviewed funding gate. Payment module loads without browser errors.
+Seven automated tests pass (matching boundaries, review/history/notes, changed evidence, authorization gate, receipt details). Production landing and payment bundles build. Browser checks passed for landing rendering and CTA → Scout, Ontario matching → Ottawa evidence, voice controls loading without starting a call, a 3/3 human review with an explicit correction note, and the reviewed funding gate. Payment module loads without browser errors.
 
 ## Incomplete external checks
 
