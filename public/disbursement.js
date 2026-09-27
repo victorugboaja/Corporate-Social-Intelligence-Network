@@ -1,4 +1,6 @@
 import {organizations} from './data.js';
+import {requireAuth} from './auth.bundle.js';
+await requireAuth();
 const params=new URLSearchParams(location.search),org=organizations.find(o=>o.id===params.get('org'))||organizations[0];
 const money=n=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD',maximumFractionDigits:0}).format(n);
 document.querySelector('#back-analysis').href=`/evidence?org=${org.id}&view=analysis`;

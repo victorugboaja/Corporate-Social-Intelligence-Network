@@ -1,5 +1,7 @@
 import {organizations,scoreLabels,initialState,findingsFor,reviewFinding} from './data.js';
 import {canAuthorize} from './grants.js';
+import {requireAuth} from './auth.bundle.js';
+await requireAuth();
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const params=new URLSearchParams(location.search),org=organizations.find(o=>o.id===params.get('org'))||organizations[0];
 let identity;try{identity=JSON.parse(sessionStorage.getItem('csin-access'));}catch{}$('#identity').textContent=identity?`${identity.name} · ${identity.company}`:'Scout access';

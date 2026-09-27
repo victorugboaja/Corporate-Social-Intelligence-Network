@@ -1,4 +1,6 @@
 import {organizations} from './data.js';
+import {requireAuth} from './auth.bundle.js';
+await requireAuth();
 const params=new URLSearchParams(location.search);
 const org=organizations.find(o=>o.id===(params.get('case')||params.get('org')))||organizations[0];
 const version=org.id==='ottawa'&&params.get('version')==='2'?2:1;

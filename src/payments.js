@@ -1,7 +1,9 @@
 import {Connection,PublicKey,SystemProgram,Transaction} from '@solana/web3.js';
 import bs58 from 'bs58';
+import {requireAuth} from './auth.js';
 import {organizations,initialState,findingsFor} from '../public/data.js';
 import {readGrants,writeGrant,canAuthorize,verifyTransfer} from '../public/grants.js';
+await requireAuth();
 const $=s=>document.querySelector(s);
 const org=organizations.find(o=>o.id===new URLSearchParams(location.search).get('org'))||organizations[0];
 const connection=new Connection(location.origin+'/api/devnet',{commitment:'confirmed',disableRetryOnRateLimit:true});

@@ -1,4 +1,6 @@
 import {organizations,scoutMatches} from './data.js';
+import {requireAuth} from './auth.bundle.js';
+const authUser=await requireAuth();
 const $=s=>document.querySelector(s),ns='http://www.w3.org/2000/svg';
 const provinces=[...new Set(organizations.map(o=>o.region))];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -7,6 +9,8 @@ const svg=(tag,attrs,text)=>{const e=document.createElementNS(ns,tag);Object.ent
 
 let identity;try{identity=JSON.parse(sessionStorage.getItem('csin-access'));}catch{}
 const dialog=$('#access-dialog');
+const nameInput=$('#access-form input[name="name"]');
+if(nameInput&&!nameInput.value)nameInput.value=authUser.name||authUser.nickname||'';
 function showIdentity(){if(!identity){dialog.showModal();return;}$('#identity').textContent=`${identity.name} · ${identity.company}`;}
 $('#access-form').addEventListener('submit',e=>{e.preventDefault();const form=new FormData(e.currentTarget);identity={name:String(form.get('name')).trim(),company:String(form.get('company')).trim()};if(!identity.name||!identity.company)return;sessionStorage.setItem('csin-access',JSON.stringify(identity));dialog.close();showIdentity();});
 $('#identity').addEventListener('click',()=>{dialog.showModal();});

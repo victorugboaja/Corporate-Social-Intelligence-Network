@@ -22,6 +22,8 @@ docker compose ps
 
 Check `https://YOUR-DOMAIN/health`; it should return `{"status":"ok"}`. Then walk through `/`, `/scout`, `/evidence?org=ottawa`, `/track` and `/fund.html?org=ottawa`.
 
+In the Auth0 application settings, add `https://YOUR-DOMAIN/auth-callback.html` to Allowed Callback URLs and `https://YOUR-DOMAIN` to both Allowed Logout URLs and Allowed Web Origins. Keep the local `127.0.0.1` entries during judging if the local preview will still be used. This browser integration uses the public Domain and Client ID only; never add a Client Secret to frontend code.
+
 ## Final-origin checks
 
 - Landing buttons open Scout.

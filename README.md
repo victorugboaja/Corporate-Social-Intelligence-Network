@@ -6,6 +6,8 @@ Canada-only, fictional funding intelligence: landing → Scout → evidence → 
 
 Requires Node.js 22+. Run `npm ci`, `npm run build`, then `npm start`. Open http://127.0.0.1:4173/. Run `npm test` for review, matching and transfer-receipt checks.
 
+Scout and all application routes use Auth0 Universal Login. The public Auth0 tenant domain and browser Client ID are bundled into the browser application; no Client Secret is used or stored. For local testing, the Auth0 application must allow `http://127.0.0.1:4173/auth-callback.html` as a callback, and `http://127.0.0.1:4173` as both a logout URL and web origin. After authentication, CSIN asks for a display name and company; Auth0 remains the account and session provider.
+
 The imported Lovable landing source lives in landing/. Its build outputs are under public/landing/. See LANDING-SOURCE.md. The existing application remains separate at /scout, /evidence, /fund.html and /track.
 
 ## Demo
