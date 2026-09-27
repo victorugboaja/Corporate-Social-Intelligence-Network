@@ -155,7 +155,7 @@ export default function Landing() {
 
       <footer className="landing-footer">
         <span>CSIN</span>
-        <span>Fictional hackathon demonstration</span>
+        <span>Sample hackathon demonstration</span>
       </footer>
     </div>
   );

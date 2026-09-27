@@ -3,7 +3,7 @@
 ## Implemented locally
 
 - Actual imported Lovable landing components at / with CSIN branding, miniature animated Canada network and links to /scout. CSS animation and mobile menu reused; unrelated financial/auth integrations excluded.
-- Full Canada Scout map, scan animation, six mandate criteria, four fictional profiles and useful empty states.
+- Full Canada Scout map, scan animation, six mandate criteria, four sample profiles and useful empty states.
 - Source-backed fixture reports, local human notes, review states, original report exports and Ottawa follow-up comparison. Changed evidence invalidates its review.
 - ElevenLabs widget loader beside evidence and standalone analyst page. Public agent ID configured. The user explicitly starts any metered conversation.
 - Test-payment page: all findings must be reviewed; explicit authorization; wallet signs a fixed devnet transaction; verify transfer source, recipient, amount and success before confirming. No real money.

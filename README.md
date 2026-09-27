@@ -1,6 +1,6 @@
 # CSIN hackathon prototype
 
-Canada-only, fictional funding intelligence: landing → Scout → evidence → human review → devnet test funding → Track.
+Canada-only, sample funding intelligence: landing → Scout → evidence → human review → devnet test funding → Track.
 
 ## Build disclosure
 

@@ -22,7 +22,7 @@ export function Footer01() {
           CSIN
         </Link>
         <p className="text-sm text-white/60">
-          © {year} CSIN · Fictional hackathon demonstration
+          © {year} CSIN · Sample hackathon demonstration
         </p>
       </div>
     </footer>

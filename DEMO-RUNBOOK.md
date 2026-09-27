@@ -12,7 +12,7 @@
 
 “Corporate giving teams receive compelling stories, but the evidence behind those stories is inconsistent and difficult to compare. CSIN turns that into a human-led review workflow.
 
-I begin in Scout by defining a Canadian funding mandate. The network identifies fictional organizations whose region, program and request fit the criteria. This is a curated demonstration network, not a ranking of real charities.
+I begin in Scout by defining a Canadian funding mandate. The network identifies sample organizations whose region, program and request fit the criteria. This is a curated demonstration network, not a ranking of real charities.
 
 Ottawa Access Collective reports that twelve participants started paid work. CSIN shows the source beside the claim and makes the limitation explicit: the outcome is self-reported, has no employer confirmation and does not establish causation.
 
@@ -20,7 +20,7 @@ The ElevenLabs analyst lets me discuss that evidence by voice, while a human rem
 
 When a new report arrives, CSIN preserves the earlier version and reopens any finding whose evidence changed. Funding remains locked until the current findings have been reviewed.
 
-The final action is an explicitly authorized Solana devnet transfer. The wallet shows the network, recipient and test amount before signing. CSIN verifies the actual transaction details and tracks the receipt separately from the nonprofit’s impact evidence. Test SOL has no monetary value, and the fictional Canadian-dollar grant is never marked paid.”
+The final action is an explicitly authorized Solana devnet transfer. The wallet shows the network, recipient and test amount before signing. CSIN verifies the actual transaction details and tracks the receipt separately from the nonprofit’s impact evidence. Test SOL has no monetary value, and the sample Canadian-dollar grant is never marked paid.”
 
 ## Live clicks
 

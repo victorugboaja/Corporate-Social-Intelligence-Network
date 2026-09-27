@@ -13,7 +13,7 @@ let provider,publicKey,busy=false;
 function record(){try{return (JSON.parse(localStorage.getItem('csin-demo-canada-v1')||localStorage.getItem('bcf-demo-canada-v2'))||initialState()).records[org.id];}catch{return initialState().records[org.id];}}
 function eligible(){const r=record();return canAuthorize(findingsFor(org,r),r);}
 function message(t){$('#payment-message').textContent=t;}
-function render(){const g=readGrants()[org.id];$('#organization').textContent=org.name;$('#request').textContent=`CAD ${org.request.toLocaleString()} fictional request — no CAD disbursement`;
+function render(){const g=readGrants()[org.id];$('#organization').textContent=org.name;$('#request').textContent=`CAD ${org.request.toLocaleString()} sample request — no CAD disbursement`;
  $('#review-link').href=`/evidence?org=${org.id}`;$('#review-status').textContent=eligible()?'All current findings have a human review. Explicit payment authorization is still required.':'Review every current finding before authorizing. Pending or flagged findings block the test transfer.';
  $('#pay').disabled=busy||!publicKey||!eligible()||!$('#authorization').checked||Boolean(g?.signature);
  $('#recheck').hidden=!g?.signature;$('#receipt').hidden=!g;const empty=document.querySelector('.receipt-empty');if(empty)empty.hidden=Boolean(g);

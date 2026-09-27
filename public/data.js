@@ -45,13 +45,25 @@ function standardFindings(o){const units=18+(o.name.length%23),wait=5+(o.city.le
  {id:'reports',title:'Impact Reports',value:'1',headline:'One impact report is available',text:'The report is self-reported and has not been independently verified.',source:`${o.initials}-S1`,status:'Pending'}
 ];}
 
-export const organizations=[...core,...additions.map((a,i)=>{const [id,name,initials,city,province,region,sector,request,established,program,evidence]=a;const o={id,name,initials,city,province,region,sector,focus:sector,request,established,program,evidence,country:'Canada',summary:`A fictional ${sector.toLowerCase()} program serving residents in ${city}.`,scores:scoreNames.map((_,j)=>55+((i*9+j*7)%37))};o.findings=standardFindings(o);o.sources=[{id:`${initials}-S1`,title:'Program report',text:`Synthetic program information for ${name}. All figures are fictional.`}];return o;})].map(o=>{o.country='Canada';o.province??='ON';o.region??='Ontario';o.sector??=o.focus;o.program??='Mentoring';o.evidence??='Activity only';o.findings??=standardFindings(o);o.sources??=[{id:`${o.initials}-S1`,title:'Program report',text:`Synthetic program information for ${o.name}.`}];o.questions??=['How are reported outcomes verified?','What delivery capacity is funded by the request?'];o.concerns??=['Available evidence is organization-reported.'];o.improvements??=['Define a consistent follow-up method.','Publish a detailed use-of-funds schedule.'];o.alignment??=[`${o.sector} aligns with the selected funding area.`];o.fit='Available for review';return o;});
+export const organizations=[...core,...additions.map((a,i)=>{const [id,name,initials,city,province,region,sector,request,established,program,evidence]=a;const o={id,name,initials,city,province,region,sector,focus:sector,request,established,program,evidence,country:'Canada',summary:`A sample ${sector.toLowerCase()} program serving residents in ${city}.`,scores:scoreNames.map((_,j)=>55+((i*9+j*7)%37))};o.findings=standardFindings(o);o.sources=[{id:`${initials}-S1`,title:'Program report',text:`Synthetic program information for ${name}. All figures are sample.`}];return o;})].map(o=>{o.country='Canada';o.province??='ON';o.region??='Ontario';o.sector??=o.focus;o.program??='Mentoring';o.evidence??='Activity only';o.findings??=standardFindings(o);o.sources??=[{id:`${o.initials}-S1`,title:'Program report',text:`Synthetic program information for ${o.name}.`}];o.questions??=['How are reported outcomes verified?','What delivery capacity is funded by the request?'];o.concerns??=['Available evidence is organization-reported.'];o.improvements??=['Define a consistent follow-up method.','Publish a detailed use-of-funds schedule.'];o.alignment??=[`${o.sector} aligns with the selected funding area.`];o.fit='Available for review';return o;});
 
 export const scoreLabels=scoreNames;
 export const updatedOutcome={id:'outcomes',title:'Resolved Cases',value:'13',headline:'9 reconfirmations and 4 additional self-reported starts',text:'Three original participants did not respond. No independent verification or causal evidence.',source:'O1-S2',status:'Update available'};
-export function initialState(){return {selected:'ottawa',tab:'report',country:'All',focus:'All',records:Object.fromEntries(organizations.map(o=>[o.id,{version:1,reviews:{},history:null}]))};}
-export function findingsFor(org,record){return org.findings.map(f=>org.id==='ottawa'&&record.version===2&&f.id==='outcomes'?updatedOutcome:f);}
-export function applyUpdate(record){if(record.version!==1)return false;record.history=structuredClone({version:1,reviews:record.reviews});record.version=2;delete record.reviews.outcomes;return true;}
+export function initialState(){return {selected:'ottawa',tab:'report',country:'All',focus:'All',records:Object.fromEntries(organizations.map(o=>[o.id,{version:1,reviews:{},history:[],updates:{}}]))};}
+export function findingsFor(org,record){return org.findings.map(f=>{
+ const builtIn=org.id==='ottawa'&&record.version>=2&&f.id==='outcomes'&&!record.updates?.[f.id]?updatedOutcome:f;
+ return record.updates?.[f.id]?{...builtIn,...record.updates[f.id]}:builtIn;
+});}
+function historyList(record){if(Array.isArray(record.history))return record.history;if(record.history)return [record.history];return [];}
+export function applyEvidenceUpdate(record,id,update){
+ if(!id||!update?.value?.trim()||!update?.headline?.trim()||!update?.text?.trim()||!update?.source?.trim())throw new Error('Complete the changed finding and source details.');
+ const currentVersion=Number(record.version)||1;
+ record.history=[...historyList(record),structuredClone({version:currentVersion,reviews:record.reviews||{},updates:record.updates||{}})];
+ record.version=currentVersion+1;
+ record.updates={...(record.updates||{}),[id]:{value:update.value.trim(),headline:update.headline.trim(),text:update.text.trim(),source:update.source.trim(),sourceText:(update.sourceText||'').trim(),status:'New evidence — review required',receivedAt:new Date().toISOString()}};
+ record.reviews??={};delete record.reviews[id];return true;
+}
+export function applyUpdate(record){if(record.version!==1)return false;return applyEvidenceUpdate(record,'outcomes',updatedOutcome);}
 export function reviewFinding(record,id,status,note){if(!['approved','flagged','corrected'].includes(status))throw new Error('Invalid review');if(status!=='approved'&&!note.trim())throw new Error('Add a note explaining your review.');record.reviews[id]={status,note:note.trim(),at:new Date().toISOString()};}
 
 export const scoutMetadata=Object.fromEntries(organizations.map(o=>[o.id,{province:o.province,region:o.region,program:o.program,evidence:o.evidence,milestones:[{label:o.findings[4].headline,state:o.findings[4].status,source:o.findings[4].source}]}]));

@@ -10,7 +10,7 @@ Corporate social-investment and giving teams reviewing Canadian funding requests
 
 ## Solution
 
-CSIN is a human-led demonstration. A funder scouts a curated set of fictional Canadian organizations, opens an organization profile, reads program analysis, discusses the supplied record with a voice analyst, and keeps review and funding authorization with a person.
+CSIN is a human-led demonstration. A funder scouts a curated set of sample Canadian organizations, opens an organization profile, reads program analysis, discusses the supplied record with a voice analyst, and keeps review and funding authorization with a person.
 
 ## Working flow
 
@@ -22,15 +22,15 @@ Auth0 Universal Login provides account creation, login, logout and protected app
 
 ## Demonstration data
 
-Every organization, program result, rating, and financial figure in CSIN is fictional demonstration data. Ottawa Access Collective and the other profiles are not real charities. A campaign target, including the fictional CAD 20,000 Ottawa fixture, is not a grant, invoice, or payment.
+Every organization, program result, rating, and financial figure in CSIN is sample demonstration data. Ottawa Access Collective and the other profiles are not real charities. A campaign target, including the sample CAD 20,000 Ottawa fixture, is not a grant, invoice, or payment.
 
 ## Voice analyst
 
-ElevenLabs is used only as the voice analyst. The person starts and ends the conversation. The analyst discusses supplied fictional records. It does not approve a finding or authorize funding.
+ElevenLabs is used only as the voice analyst. The person starts and ends the conversation. The analyst discusses supplied sample records. It does not approve a finding or authorize funding.
 
 ## Test settlement
 
-Solana is used only as devnet test settlement. Devnet SOL has no monetary value. This repository does not contain a verified transaction, so settlement stays pending until a verified transaction exists. A test transfer would not pay a fictional Canadian-dollar request and would not prove social impact.
+Solana is used only as devnet test settlement. Devnet SOL has no monetary value. This repository does not contain a verified transaction, so settlement stays pending until a verified transaction exists. A test transfer would not pay a sample Canadian-dollar request and would not prove social impact.
 
 ## Technology and build process
 

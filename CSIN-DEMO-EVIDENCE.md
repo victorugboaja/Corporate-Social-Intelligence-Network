@@ -1,10 +1,10 @@
 # CSIN Canada-only evidence packet — revision 3
 
-All organizations, locations, requests and outcomes are fictional demo fixtures. This packet replaces the earlier international packet. CSIN means Corporate Social Intelligence Network. Discuss Canadian community investment only.
+All organizations, locations, requests and outcomes are sample demo fixtures. This packet replaces the earlier international packet. CSIN means Corporate Social Intelligence Network. Discuss Canadian community investment only.
 
 ## Ottawa Access Collective
 
-ID: ottawa. Location: Ottawa, Ontario, Canada. Fictional request: CAD 20000. Program: Mentoring.
+ID: ottawa. Location: Ottawa, Ontario, Canada. Sample request: CAD 20000. Program: Mentoring.
 
 Employment mentoring for residents facing barriers to professional networks.
 
@@ -20,7 +20,7 @@ Evidence gaps: Independent evidence of employment outcomes; Follow-up coverage a
 
 ## Vancouver Skills Circle
 
-ID: vancouver. Location: Vancouver, British Columbia, Canada. Fictional request: CAD 15000. Program: Mentoring.
+ID: vancouver. Location: Vancouver, British Columbia, Canada. Sample request: CAD 15000. Program: Mentoring.
 
 Peer mentoring and professional introductions for people with international experience.
 
@@ -32,7 +32,7 @@ Evidence gaps: Program budget and cost detail; Employment follow-up measures; De
 
 ## Atlantic Community Garden
 
-ID: garden. Location: Halifax, Nova Scotia, Canada. Fictional request: CAD 10000. Program: Workshops.
+ID: garden. Location: Halifax, Nova Scotia, Canada. Sample request: CAD 10000. Program: Workshops.
 
 Neighbourhood gardening, food-sharing workshops and accessible growing spaces.
 
@@ -44,9 +44,9 @@ Evidence gaps: Fit with a food-access or neighbourhood funder; Workshop reach an
 
 ## Prairie Pathways Society
 
-ID: calgary. Location: Calgary, Alberta, Canada. Fictional request: CAD 80000. Program: Training.
+ID: calgary. Location: Calgary, Alberta, Canada. Sample request: CAD 80000. Program: Training.
 
-A fictional employment training and employer-introduction program for young adults.
+A sample employment training and employer-introduction program for young adults.
 
 ### O4-S1: Pilot brief (synthetic) — synthetic
 

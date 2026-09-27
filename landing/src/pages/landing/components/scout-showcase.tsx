@@ -6,8 +6,8 @@ export function ScoutShowcase(){
  const [map,setMap]=useState<MapData|null>(null);
  useEffect(()=>{let active=true;fetch('/canada-map.json').then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>{if(active)setMap(data)}).catch(()=>{});return()=>{active=false}},[]);
  return <div className="network-showcase">
-  <div className="network-caption"><span>CANADA SCOUT NETWORK</span><span>20 FICTIONAL ORGANIZATIONS</span></div>
-  {map?<svg viewBox="0 0 1000 710" role="img" aria-label="Canada Scout network preview with fictional organizations in Vancouver, Calgary, Ottawa and Halifax">
+  <div className="network-caption"><span>CANADA SCOUT NETWORK</span><span>20 SAMPLE ORGANIZATIONS</span></div>
+  {map?<svg viewBox="0 0 1000 710" role="img" aria-label="Canada Scout network preview with sample organizations in Vancouver, Calgary, Ottawa and Halifax">
    <defs><radialGradient id="lens-light"><stop stopColor="#93ca35" stopOpacity=".28"/><stop offset="1" stopColor="#93ca35" stopOpacity="0"/></radialGradient></defs>
    {map.provinces.map(p=><path key={p.code} d={p.path} className="mini-province"/>)}
    <path className="network-lines" d={`M${map.nodes.vancouver.join(',')} L${map.nodes.calgary.join(',')} L${map.nodes.ottawa.join(',')} L${map.nodes.garden.join(',')}`}/>
