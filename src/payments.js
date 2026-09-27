@@ -16,7 +16,7 @@ function message(t){$('#payment-message').textContent=t;}
 function render(){const g=readGrants()[org.id];$('#organization').textContent=org.name;$('#request').textContent=`CAD ${org.request.toLocaleString()} fictional request — no CAD disbursement`;
  $('#review-link').href=`/evidence?org=${org.id}`;$('#review-status').textContent=eligible()?'All current findings have a human review. Explicit payment authorization is still required.':'Review every current finding before authorizing. Pending or flagged findings block the test transfer.';
  $('#pay').disabled=busy||!publicKey||!eligible()||!$('#authorization').checked||Boolean(g?.signature);
- $('#recheck').hidden=!g?.signature;$('#receipt').hidden=!g;
+ $('#recheck').hidden=!g?.signature;$('#receipt').hidden=!g;const empty=document.querySelector('.receipt-empty');if(empty)empty.hidden=Boolean(g);
  if(g){$('#receipt-status').textContent=g.status;$('#receipt-recipient').textContent=g.recipient||'—';$('#receipt-signature').textContent=g.signature||'Not submitted';$('#receipt-time').textContent=g.confirmedAt||g.authorizedAt||'—';$('#receipt-amount').textContent=`${(g.lamports||0)/1e9} devnet SOL (no monetary value)`;$('#explorer').hidden=!g.signature;if(g.signature)$('#explorer').href=`https://explorer.solana.com/tx/${encodeURIComponent(g.signature)}?cluster=devnet`;}
 }
 async function network(){if(await connection.getGenesisHash()!==EXPECTED_GENESIS)throw Error('Network check failed. Only Solana devnet is permitted.');}
