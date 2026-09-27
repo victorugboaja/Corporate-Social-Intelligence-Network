@@ -1,0 +1,8 @@
+import {organizations} from './data.js';
+const params=new URLSearchParams(location.search),org=organizations.find(o=>o.id===params.get('org'))||organizations[0];
+const money=n=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD',maximumFractionDigits:0}).format(n);
+document.querySelector('#back-analysis').href=`/evidence?org=${org.id}&view=analysis`;
+document.querySelector('#organization').value=org.name;
+document.querySelector('#target').value=money(org.request);
+document.querySelector('#amount').value=Math.min(5000,org.request);
+document.querySelector('#disbursement').addEventListener('submit',e=>{e.preventDefault();const amount=Number(document.querySelector('#amount').value);if(!amount||amount>org.request){document.querySelector('#payment-message').textContent='Check disbursement amount';return;}const record={org:org.id,amount,status:'Pending human approval',at:new Date().toISOString()};const records=JSON.parse(localStorage.getItem('csin-disbursements')||'{}');records[org.id]=record;localStorage.setItem('csin-disbursements',JSON.stringify(records));document.querySelector('#receipt-title').textContent='Pending human approval';document.querySelector('#receipt-body').textContent=`${money(amount)} · ${org.name}`;document.querySelector('#payment-message').textContent='Disbursement initiated';});

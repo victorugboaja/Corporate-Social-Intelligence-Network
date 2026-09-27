@@ -1,0 +1,8 @@
+{$CSIN_DOMAIN} {
+  encode zstd gzip
+  reverse_proxy csin:4173
+  header {
+    X-Frame-Options "SAMEORIGIN"
+    Permissions-Policy "camera=(), geolocation=()"
+  }
+}
