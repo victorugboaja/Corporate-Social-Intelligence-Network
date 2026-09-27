@@ -8,14 +8,6 @@ Built during Hack the Hill III with AI-assisted development using OpenAI Codex a
 
 The application uses a Node.js server for static routes, health checks and a restricted Solana devnet RPC proxy. The landing page is bundled from React/TypeScript; the application workflow uses browser JavaScript. Git commits and isolated worktrees preserve the project history and keep parallel Cursor work separate until review.
 
-## Run
-
-Requires Node.js 22+. Run `npm ci`, `npm run build`, then `npm start`. Open http://127.0.0.1:4173/. Run `npm test` for review, matching and transfer-receipt checks.
-
-Scout and all application routes use Auth0 Universal Login. The public Auth0 tenant domain and browser Client ID are bundled into the browser application; no Client Secret is used or stored. For local testing, the Auth0 application must allow `http://127.0.0.1:4173/auth-callback.html` as a callback, and `http://127.0.0.1:4173` as both a logout URL and web origin. After authentication, CSIN asks for a display name and company; Auth0 remains the account and session provider.
-
-The imported Lovable landing source lives in landing/. Its build outputs are under public/landing/. See LANDING-SOURCE.md. The existing application remains separate at /scout, /evidence, /fund.html and /track.
-
 ## Demo
 
 1. Open the landing and select See How It Works.
