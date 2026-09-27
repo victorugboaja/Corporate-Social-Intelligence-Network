@@ -1,4 +1,4 @@
-# CSIN hackathon prototype
+# CSIN hackathon prototype https://www.csin.work/
 
 Canada-only, sample funding intelligence: landing → Scout → evidence → human review → devnet test funding → Track.
 
