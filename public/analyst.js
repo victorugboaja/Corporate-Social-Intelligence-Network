@@ -30,7 +30,7 @@ function closeAnalyst(message='Call ended. Analyst closed.'){
  if(widget){widget.remove();widget=null;}
  container.replaceChildren();
  endButton.hidden=true;
- button.hidden=false;button.disabled=false;button.textContent='Talk to CSIN Analyst';
+ button.hidden=false;button.disabled=false;button.textContent='Talk to Scout Analyst';
  status.textContent=message;
 }
 button.addEventListener('click',async()=>{
@@ -41,7 +41,7 @@ button.addEventListener('click',async()=>{
   widget.setAttribute('agent-id','agent_4101m3dtajc0f9zs3g79eafv5eke');
   const organizationContext=[org.summary,...org.findings.map(f=>`${f.title}: ${f.headline}. ${f.text} Source ${f.source}. Status ${f.status}.`)].join(' ');
   widget.setAttribute('dynamic-variables',JSON.stringify({organization_name:org.name,organization_city:org.city,organization_province:org.province,organization_sector:org.sector,campaign_target:`CAD ${org.request.toLocaleString('en-CA')}`,report_version:String(version),organization_context:organizationContext}));
-  widget.setAttribute('action-text','CSIN Analyst');
+  widget.setAttribute('action-text','Scout Analyst');
   widget.setAttribute('start-call-text','Start Call');
   widget.setAttribute('end-call-text','End Call');
   widget.setAttribute('expand-text','Open analyst');

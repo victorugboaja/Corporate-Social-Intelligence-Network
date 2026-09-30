@@ -1,4 +1,4 @@
-# CSIN deployment handoff
+# The Philanthropic Scout Network deployment handoff
 
 The application is packaged as a small Node service behind Caddy. Caddy obtains and renews HTTPS automatically after the domain points to the server. HTTPS is required for reliable microphone and browser-wallet access.
 

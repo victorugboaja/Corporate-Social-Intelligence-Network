@@ -19,10 +19,10 @@ export function Footer01() {
           className="flex items-center gap-2 font-heading text-[21px] font-semibold leading-6 tracking-tight text-white"
         >
           <IconPlant2 className="size-5 text-primary" aria-hidden="true" />
-          CSIN
+          The Philanthropic Scout Network
         </Link>
         <p className="text-sm text-white/60">
-          © {year} CSIN · Sample hackathon demonstration
+          © {year} The Philanthropic Scout Network · Sample hackathon demonstration
         </p>
       </div>
     </footer>

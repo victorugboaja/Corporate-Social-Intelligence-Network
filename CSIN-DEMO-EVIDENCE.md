@@ -1,6 +1,6 @@
-# CSIN Canada-only evidence packet — revision 3
+# The Philanthropic Scout Network Canada-only evidence packet — revision 3
 
-All organizations, locations, requests and outcomes are sample demo fixtures. This packet replaces the earlier international packet. CSIN means Corporate Social Intelligence Network. Discuss Canadian community investment only.
+All organizations, locations, requests and outcomes are sample demo fixtures. This packet replaces the earlier international packet. The application is named The Philanthropic Scout Network. Discuss Canadian community investment only.
 
 ## Ottawa Access Collective
 

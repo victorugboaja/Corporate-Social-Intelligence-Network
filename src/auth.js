@@ -96,7 +96,7 @@ async function completeCallback(){
   try{
     const client=await clientPromise;
     const result=await client.handleRedirectCallback();
-    authStatus('Signed in. Opening CSIN…');
+    authStatus('Signed in. Opening The Philanthropic Scout Network…');
     location.replace(safeReturnTo(result?.appState?.returnTo));
   }catch(error){
     authStatus(`Sign in could not be completed: ${error.message}. Return home and continue to the demo, or ask an admin to allow ${location.origin}${CALLBACK_PATH} in Auth0.`);

@@ -33,4 +33,4 @@ const server=http.createServer(async(req,res)=>{
     res.end(req.method==='HEAD'?undefined:data);
   }catch{res.writeHead(404);res.end('Not found');}
 });
-server.listen(Number(process.env.PORT||4173),process.env.HOST||'127.0.0.1',()=>console.log(`CSIN preview: http://${process.env.HOST||'127.0.0.1'}:${process.env.PORT||4173}`));
+server.listen(Number(process.env.PORT||4173),process.env.HOST||'127.0.0.1',()=>console.log(`The Philanthropic Scout Network preview: http://${process.env.HOST||'127.0.0.1'}:${process.env.PORT||4173}`));

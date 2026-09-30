@@ -1,4 +1,4 @@
-# Corporate Social Intelligence Network (CSIN)
+# The Philanthropic Scout Network (The Philanthropic Scout Network)
 
 ## Problem
 
@@ -10,7 +10,7 @@ Corporate social-investment and giving teams reviewing Canadian funding requests
 
 ## Solution
 
-CSIN is a human-led demonstration. A funder scouts a curated set of sample Canadian organizations, opens an organization profile, reads program analysis, discusses the supplied record with a voice analyst, and keeps review and funding authorization with a person.
+The Philanthropic Scout Network is a human-led demonstration. A funder scouts a curated set of sample Canadian organizations, opens an organization profile, reads program analysis, discusses the supplied record with a voice analyst, and keeps review and funding authorization with a person.
 
 ## Working flow
 
@@ -18,11 +18,11 @@ Landing → Scout → organization profile → program analysis → human review
 
 Local routes: `/`, `/scout`, `/evidence`, `/analyst`, `/fund.html`, and `/track`.
 
-Auth0 Universal Login provides optional account creation, login and logout. Application pages render without forcing Auth0 first, so a missing production callback URL cannot blank the demo. After Auth0 sign-in (or the local Scout access dialog), CSIN still records the user’s name and company as the workspace profile.
+Auth0 Universal Login provides optional account creation, login and logout. Application pages render without forcing Auth0 first, so a missing production callback URL cannot blank the demo. After Auth0 sign-in (or the local Scout access dialog), The Philanthropic Scout Network still records the user’s name and company as the workspace profile.
 
 ## Demonstration data
 
-Every organization, program result, rating, and financial figure in CSIN is sample demonstration data. Ottawa Access Collective and the other profiles are not real charities. A campaign target, including the sample CAD 20,000 Ottawa fixture, is not a grant, invoice, or payment.
+Every organization, program result, rating, and financial figure in The Philanthropic Scout Network is sample demonstration data. Ottawa Access Collective and the other profiles are not real charities. A campaign target, including the sample CAD 20,000 Ottawa fixture, is not a grant, invoice, or payment.
 
 ## Voice analyst
 

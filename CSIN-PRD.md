@@ -1,4 +1,4 @@
-# CSIN — Corporate Social Intelligence Network
+# The Philanthropic Scout Network — The Philanthropic Scout Network
 
 Updated scope, 26 September 2026. Supersedes the Canada–Europe/three-profile version. CEPI is a separate project.
 

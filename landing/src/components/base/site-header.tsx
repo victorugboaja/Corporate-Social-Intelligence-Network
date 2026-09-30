@@ -53,7 +53,7 @@ export function SiteHeader({ variant = "marketing" }: SiteHeaderProps) {
             aria-hidden="true"
           />
           {/* One line, always: the name truncates rather than wrapping the bar. */}
-          <span className="min-w-0 truncate">CSIN</span>
+          <span className="min-w-0 truncate">The Philanthropic Scout Network</span>
         </Link>
 
         <div className={cn("items-center gap-2", onAuth ? "flex" : "hidden sm:flex")}>

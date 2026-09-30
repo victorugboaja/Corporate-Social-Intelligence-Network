@@ -6,7 +6,7 @@ import {ScoutShowcase} from "./components/scout-showcase";
 const nav = [
   {label: "Scout", to: "/scout"},
   {label: "Prospect List", to: "/track"},
-  {label: "CSIN Analyst", to: "/analyst?org=ottawa"},
+  {label: "Scout Analyst", to: "/analyst?org=ottawa"},
 ];
 
 function NavLinks({onNavigate}: {onNavigate?: () => void}) {
@@ -49,7 +49,7 @@ export default function Landing() {
     <div className="csin-landing">
       <header className="landing-header" ref={headerRef}>
         <Link to="/" className="landing-brand">
-          CSIN
+          The Philanthropic Scout Network
         </Link>
         <nav className="landing-nav" aria-label="Primary navigation">
           <NavLinks />
@@ -74,10 +74,9 @@ export default function Landing() {
       <main>
         <section className="landing-hero">
           <div className="hero-copy">
-            <p className="eyebrow">Corporate Social Intelligence Network</p>
-            <h1>CSIN</h1>
+            <h1>The Philanthropic Scout Network</h1>
             <p className="hero-line">
-              Discover impactful organizations through our Corporate Social Intelligence Network.
+              Discover charitable organizations by funding priorities, program focus, financial scale, documented milestones and supporting evidence.
             </p>
             <div className="hero-actions">
               <a href="#capabilities" className="button-outline">
@@ -95,7 +94,7 @@ export default function Landing() {
             <span>01</span>
             <div>
               <h2>Scout Network</h2>
-              <p>Set the funding criteria. See the organizations that match.</p>
+              <p>Set the funding priorities. See the organizations that match.</p>
             </div>
             <Link to="/scout">
               Open Scout <IconArrowRight aria-hidden="true" />
@@ -118,7 +117,7 @@ export default function Landing() {
           <div className="product-frame">
             <img
               src="/assets/organization-profile.png"
-              alt="CSIN organization profile showing organization details, evidence ratings and program analysis actions"
+              alt="The Philanthropic Scout Network organization profile showing organization details, evidence ratings and program analysis actions"
               loading="lazy"
             />
           </div>
@@ -138,7 +137,7 @@ export default function Landing() {
           <div className="product-frame">
             <img
               src="/assets/program-analysis.png"
-              alt="CSIN program analysis with evidence tiles and the voice analyst call action"
+              alt="The Philanthropic Scout Network program analysis with evidence tiles and the voice analyst call action"
               loading="lazy"
             />
           </div>
@@ -154,7 +153,7 @@ export default function Landing() {
       </main>
 
       <footer className="landing-footer">
-        <span>CSIN</span>
+        <span>The Philanthropic Scout Network</span>
         <span>Sample hackathon demonstration</span>
       </footer>
     </div>

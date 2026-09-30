@@ -622,8 +622,8 @@ body {
 .hero-copy h1 {
   margin: 0;
   color: white;
-  font-size: clamp(4.25rem, 12vw, 8.5rem);
-  line-height: 0.86;
+  font-size: clamp(2.7rem, 7vw, 5.6rem);
+  line-height: 1.05;
   letter-spacing: -0.05em;
 }
 
@@ -909,7 +909,7 @@ body {
   }
 
   .hero-copy h1 {
-    font-size: clamp(3.6rem, 20vw, 4.6rem);
+    font-size: clamp(2.5rem, 10vw, 4rem);
   }
 
   .hero-line {
@@ -964,3 +964,7 @@ body {
     transform: translate(575.6px, 586.9px);
   }
 }
+
+/* Fit the full product name without changing the green visual system. */
+.landing-brand { flex-shrink: 1; max-width: 330px; line-height: 1.1; }
+@media (max-width: 1050px) { .landing-nav { display: none; } .nav-toggle { display: inline-flex; flex-shrink: 0; } .landing-menu { display: flex; } }
